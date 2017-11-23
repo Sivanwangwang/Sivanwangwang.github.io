@@ -62,6 +62,14 @@
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
 	        
+				<li><a href="/categories">categories</a></li>
+	        
+				<li><a href="/about">about</a></li>
+	        
+				<li><a href="/archives">archives</a></li>
+	        
+				<li><a href="/tags">tags</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -122,6 +130,14 @@
 			
 				
 			
+				
+			
+				
+			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -141,12 +157,20 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 16.666666666666668%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/categories">categories</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/about">about</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/archives">archives</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags">tags</a></li>
 		        
 				</ul>
 			</nav>
@@ -754,6 +778,112 @@
 
 
   
+    <article id="post-bar_sd_plot" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/07/bar_sd_plot/">bar_sd_plot</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/07/bar_sd_plot/" class="archive-article-date">
+  	<time datetime="2017-07-06T18:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="建立数据框"><a href="#建立数据框" class="headerlink" title="建立数据框"></a>建立数据框</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Normal &lt;- c(<span class="number">0.83</span>, <span class="number">0.79</span>, <span class="number">0.99</span>, <span class="number">0.69</span>)</span><br><span class="line">Cancer &lt;- c(<span class="number">0.56</span>, <span class="number">0.56</span>, <span class="number">0.64</span>, <span class="number">0.52</span>)</span><br><span class="line">m &lt;- c(mean(Normal), mean(Cancer))</span><br><span class="line">s &lt;- c(sd(Normal), sd(Cancer))</span><br><span class="line">d &lt;- data.frame(V=c(<span class="string">"Normal"</span>, <span class="string">"Cancer"</span>), mean=m, sd=s)</span><br></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">d</span><br><span class="line"><span class="comment">##        V  mean         sd</span></span><br><span class="line"><span class="comment">## 1 Normal 0.825 0.12476645</span></span><br><span class="line"><span class="comment">## 2 Cancer 0.570 0.05033223</span></span><br></pre></td></tr></table></figure>
+<h2 id="条形图"><a href="#条形图" class="headerlink" title="条形图"></a>条形图</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">d$V &lt;- factor(d$V, levels=c(<span class="string">"Normal"</span>, <span class="string">"Cancer"</span>))</span><br><span class="line">p &lt;- ggplot(d, aes(V, mean, fill=V, width=<span class="number">.5</span>))</span><br><span class="line">p &lt;- p + geom_bar(stat=<span class="string">"identity"</span>, position=position_dodge(width=<span class="number">.8</span>), colour=<span class="string">"black"</span>)</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
+<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/6ImD82PqOxXLCrRar5rQTUbmUKHcHS8DXwkITBiSPUE!/r/dHMAAAAAAAAA" alt="image"></p>
+<h2 id="误差线"><a href="#误差线" class="headerlink" title="误差线"></a>误差线</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p+geom_errorbar(aes(ymin=mean, ymax=mean+sd, width=<span class="number">.2</span>), position=position_dodge(width=<span class="number">.8</span>))</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
+<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/ePI2**.pyv4mesoglEMXDxG06EwJHRfyQqmlw1p8M58!/r/dGoBAAAAAAAA" alt="image"></p>
+<h2 id="填充颜色设置"><a href="#填充颜色设置" class="headerlink" title="填充颜色设置"></a>填充颜色设置</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p + scale_fill_manual(values=c(<span class="string">"grey80"</span>, <span class="string">"white"</span>))</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
+<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/0QTtmNwNAj8Vi*eDlkI4EutlRW4gNPizrfxJLiAIa4s!/r/dGoBAAAAAAAA" alt="image"></p>
+<h2 id="主题，图例，轴名"><a href="#主题，图例，轴名" class="headerlink" title="主题，图例，轴名"></a>主题，图例，轴名</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p + theme_bw() +theme(legend.position=<span class="string">"none"</span>) + xlab(<span class="string">""</span>) + ylab(<span class="string">""</span>)</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
+<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/u2hV00GSTfzzMU9fGmosbVQxbDAhjhzm*FAb2G.aH*o!/r/dGsBAAAAAAAA" alt="image"></p>
+<h2 id="y轴刻度"><a href="#y轴刻度" class="headerlink" title="y轴刻度"></a>y轴刻度</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p+scale_y_continuous(expand=c(<span class="number">0</span>,<span class="number">0</span>), limits=c(<span class="number">0</span>, <span class="number">1.2</span>), breaks=seq(<span class="number">0</span>, <span class="number">1.2</span>, by=<span class="number">.2</span>))</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
+<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/T5.q65j2mnc1c6Rkv61V4Yl*imVAXamt.eUPw6Abpqc!/r/dHIAAAAAAAAA" alt="image"></p>
+<h2 id="加线，星号"><a href="#加线，星号" class="headerlink" title="加线，星号"></a>加线，星号</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p+geom_segment(aes(x=<span class="number">1</span>, y=<span class="number">.98</span>, xend=<span class="number">1</span>, yend=<span class="number">1.1</span>))</span><br><span class="line">p &lt;- p+geom_segment(aes(x=<span class="number">2</span>, y=<span class="number">.65</span>, xend=<span class="number">2</span>, yend=<span class="number">1.1</span>))</span><br><span class="line">p &lt;- p+geom_segment(aes(x=<span class="number">1</span>, y=<span class="number">1.1</span>, xend=<span class="number">2</span>, yend=<span class="number">1.1</span>))</span><br><span class="line">p &lt;- p + annotate(<span class="string">"text"</span>, x=<span class="number">1.5</span>, y=<span class="number">1.08</span>, label=<span class="string">"*"</span>)</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
+<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/TVNIEn9fR5EHldbFDGewOe*5YG4D3kKC5btejCT2ACk!/r/dGsBAAAAAAAA" alt="image"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ggplot2</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">r</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">bar</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/r//" class="article-tag-list-link color2">r</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/07/bar_sd_plot/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-markdown test2 picture test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -842,112 +972,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/07/07/markdown test2 picture test/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-bar_sd_plot" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/07/bar_sd_plot/">bar_sd_plot</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/07/bar_sd_plot/" class="archive-article-date">
-  	<time datetime="2017-07-06T18:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="建立数据框"><a href="#建立数据框" class="headerlink" title="建立数据框"></a>建立数据框</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Normal &lt;- c(<span class="number">0.83</span>, <span class="number">0.79</span>, <span class="number">0.99</span>, <span class="number">0.69</span>)</span><br><span class="line">Cancer &lt;- c(<span class="number">0.56</span>, <span class="number">0.56</span>, <span class="number">0.64</span>, <span class="number">0.52</span>)</span><br><span class="line">m &lt;- c(mean(Normal), mean(Cancer))</span><br><span class="line">s &lt;- c(sd(Normal), sd(Cancer))</span><br><span class="line">d &lt;- data.frame(V=c(<span class="string">"Normal"</span>, <span class="string">"Cancer"</span>), mean=m, sd=s)</span><br></pre></td></tr></table></figure>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">d</span><br><span class="line"><span class="comment">##        V  mean         sd</span></span><br><span class="line"><span class="comment">## 1 Normal 0.825 0.12476645</span></span><br><span class="line"><span class="comment">## 2 Cancer 0.570 0.05033223</span></span><br></pre></td></tr></table></figure>
-<h2 id="条形图"><a href="#条形图" class="headerlink" title="条形图"></a>条形图</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">d$V &lt;- factor(d$V, levels=c(<span class="string">"Normal"</span>, <span class="string">"Cancer"</span>))</span><br><span class="line">p &lt;- ggplot(d, aes(V, mean, fill=V, width=<span class="number">.5</span>))</span><br><span class="line">p &lt;- p + geom_bar(stat=<span class="string">"identity"</span>, position=position_dodge(width=<span class="number">.8</span>), colour=<span class="string">"black"</span>)</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
-<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/6ImD82PqOxXLCrRar5rQTUbmUKHcHS8DXwkITBiSPUE!/r/dHMAAAAAAAAA" alt="image"></p>
-<h2 id="误差线"><a href="#误差线" class="headerlink" title="误差线"></a>误差线</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p+geom_errorbar(aes(ymin=mean, ymax=mean+sd, width=<span class="number">.2</span>), position=position_dodge(width=<span class="number">.8</span>))</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
-<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/ePI2**.pyv4mesoglEMXDxG06EwJHRfyQqmlw1p8M58!/r/dGoBAAAAAAAA" alt="image"></p>
-<h2 id="填充颜色设置"><a href="#填充颜色设置" class="headerlink" title="填充颜色设置"></a>填充颜色设置</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p + scale_fill_manual(values=c(<span class="string">"grey80"</span>, <span class="string">"white"</span>))</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
-<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/0QTtmNwNAj8Vi*eDlkI4EutlRW4gNPizrfxJLiAIa4s!/r/dGoBAAAAAAAA" alt="image"></p>
-<h2 id="主题，图例，轴名"><a href="#主题，图例，轴名" class="headerlink" title="主题，图例，轴名"></a>主题，图例，轴名</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p + theme_bw() +theme(legend.position=<span class="string">"none"</span>) + xlab(<span class="string">""</span>) + ylab(<span class="string">""</span>)</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
-<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/u2hV00GSTfzzMU9fGmosbVQxbDAhjhzm*FAb2G.aH*o!/r/dGsBAAAAAAAA" alt="image"></p>
-<h2 id="y轴刻度"><a href="#y轴刻度" class="headerlink" title="y轴刻度"></a>y轴刻度</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p+scale_y_continuous(expand=c(<span class="number">0</span>,<span class="number">0</span>), limits=c(<span class="number">0</span>, <span class="number">1.2</span>), breaks=seq(<span class="number">0</span>, <span class="number">1.2</span>, by=<span class="number">.2</span>))</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
-<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/T5.q65j2mnc1c6Rkv61V4Yl*imVAXamt.eUPw6Abpqc!/r/dHIAAAAAAAAA" alt="image"></p>
-<h2 id="加线，星号"><a href="#加线，星号" class="headerlink" title="加线，星号"></a>加线，星号</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p+geom_segment(aes(x=<span class="number">1</span>, y=<span class="number">.98</span>, xend=<span class="number">1</span>, yend=<span class="number">1.1</span>))</span><br><span class="line">p &lt;- p+geom_segment(aes(x=<span class="number">2</span>, y=<span class="number">.65</span>, xend=<span class="number">2</span>, yend=<span class="number">1.1</span>))</span><br><span class="line">p &lt;- p+geom_segment(aes(x=<span class="number">1</span>, y=<span class="number">1.1</span>, xend=<span class="number">2</span>, yend=<span class="number">1.1</span>))</span><br><span class="line">p &lt;- p + annotate(<span class="string">"text"</span>, x=<span class="number">1.5</span>, y=<span class="number">1.08</span>, label=<span class="string">"*"</span>)</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
-<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/TVNIEn9fR5EHldbFDGewOe*5YG4D3kKC5btejCT2ACk!/r/dGsBAAAAAAAA" alt="image"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ggplot2</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">r</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">bar</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/r//" class="article-tag-list-link color2">r</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/07/bar_sd_plot/">展开全文 >></a>
         </p>
       
 
@@ -1314,7 +1338,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MarKdown</a>
+                <a href="javascript:void(0)" class="js-tag color3">ggplot2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">r</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">bar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1330,15 +1362,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ggplot2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">r</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bar</a>
+                <a href="javascript:void(0)" class="js-tag color4">MarKdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1350,15 +1374,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">test</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">环境配置</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">数据重复性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">test</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1374,11 +1398,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">r  self_funtion</a>
+                <a href="javascript:void(0)" class="js-tag color2">梅</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">梅</a>
+                <a href="javascript:void(0)" class="js-tag color1">r  self_funtion</a>
               </li>
             
             <div class="clearfix"></div>
