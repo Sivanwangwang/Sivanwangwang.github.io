@@ -159,6 +159,112 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-biotar 学习笔记（2-2）--- 环境配置、数据的重复性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/23/biotar 学习笔记（2-2）--- 环境配置、数据的重复性/">biotar 学习笔记（2-2）--- 环境配置、数据的重复性</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/23/biotar 学习笔记（2-2）--- 环境配置、数据的重复性/" class="archive-article-date">
+  	<time datetime="2017-11-23T02:01:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>系统安装完毕了，就存在进行软件的安装。</p>
+</blockquote>
+<h3 id="对于linux来说，主要包括三种软件安装方式："><a href="#对于linux来说，主要包括三种软件安装方式：" class="headerlink" title="对于linux来说，主要包括三种软件安装方式："></a>对于linux来说，主要包括三种软件安装方式：</h3><blockquote>
+<ol>
+<li>绿色软件，解压可用。</li>
+<li>源代码的文件，需要编译。</li>
+<li>使用系统软件商店或者叫镜像也行。</li>
+</ol>
+<p>当然前两种方式对于大多数人来说，都是比较麻烦的，有没有像第三种方式一样能把大部分软件通过一句命令就能安装呢？答案是有的，那就conda。这个的总结洲更班长总结的已经很完善。</p>
+</blockquote>
+<h3 id="洲更conda笔记三部曲"><a href="#洲更conda笔记三部曲" class="headerlink" title="洲更conda笔记三部曲"></a>洲更conda笔记三部曲</h3><p>1.<a href="https://mp.weixin.qq.com/s?__biz=MzI1MjU5MjMzNA==&amp;mid=2247484454&amp;idx=1&amp;sn=65484a705da7ab4aa0caa55ab4513e64&amp;chksm=e9e02d87de97a491323d0c7f445f189545254dee2bacf1ff1324b7d5f07718de7fed3e900fa8&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">世上没有白走的路，每一步都算数</a><br>2.<a href="https://mp.weixin.qq.com/s?__biz=MzI1MjU5MjMzNA==&amp;mid=2247483873&amp;idx=1&amp;sn=daa6dca017d2128ee53e6d49fbc4ee6c&amp;chksm=e9e02840de97a156754d7774d559c2a6ac3a2dcabd5aaee777dc8b0ac81b178c98f36dd0faa2&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">生信软件的好帮手-bioconda</a><br>3.<a href="https://mp.weixin.qq.com/s?__biz=MzI1MjU5MjMzNA==&amp;mid=2247484555&amp;idx=1&amp;sn=acf5b981570298724fb57d95d8c1a266&amp;chksm=e9e02d2ade97a43c5566921bb53d5261be531b578eb65f895a900eb403e94ad579df3de50111&amp;mpshare=1&amp;scene=23&amp;srcid=1022E0lyCCdzHG2saN6opHCd#rd" target="_blank" rel="noopener">什么，你嫌bioconda下载速度太慢？</a></p>
+<h3 id="配置可重复性。"><a href="#配置可重复性。" class="headerlink" title="配置可重复性。"></a>配置可重复性。</h3><blockquote>
+<p>这个是最近才有的体会，比如说你有好几个电脑都想有相同分析环境，这个不免会把有的软件可能会重新装一遍.</p>
+<ol>
+<li>那么这个时候，最好是不要去乱去重新一个新的文件夹。比如说在电脑1上使用biosoft文件夹来装软件，那么在电脑2上也请用biosoft文件夹，因为的记录一次的安装代码可以随意的重复使用。</li>
+<li>请善待路径中的~，你会喜欢上它的。</li>
+<li>如果是联网的电脑，一个软件安装脚本就可以帮你搞定一台新的电脑的配置。</li>
+<li>当然环境的移植，conda也可以，或者还有其他的方式，有待发掘。</li>
+</ol>
+</blockquote>
+<h3 id="数据的重复性"><a href="#数据的重复性" class="headerlink" title="数据的重复性"></a>数据的重复性</h3><blockquote>
+<p>我的理解有以下几点：</p>
+<ol>
+<li>生信的学习必经之路，这个就跟我们做完题，会去对一对标准答案一样的。</li>
+<li>数据的重复，必须基于的是软件及其版本一致，基因版本，注释文件版本和数据库版本一致。</li>
+<li>测序的数据不应该一次用完就抛在一边，那样太可惜了，因为数据库在更新，以及联合分析多篇文章的数据都可能有新的科学发现。</li>
+</ol>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">环境配置</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">数据重复性</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/biostar/" class="article-tag-list-link color3">biostar</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/23/biotar 学习笔记（2-2）--- 环境配置、数据的重复性/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-biotar 学习笔记（2-1） 虚拟系统准备" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -307,112 +413,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/11/23/biotar 学习笔记（2-1） 虚拟系统准备/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-biotar 学习笔记（2-2）--- 环境配置、数据的重复性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/23/biotar 学习笔记（2-2）--- 环境配置、数据的重复性/">biotar 学习笔记（2-2）--- 环境配置、数据的重复性</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/23/biotar 学习笔记（2-2）--- 环境配置、数据的重复性/" class="archive-article-date">
-  	<time datetime="2017-11-23T02:01:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>系统安装完毕了，就存在进行软件的安装。</p>
-</blockquote>
-<h3 id="对于linux来说，主要包括三种软件安装方式："><a href="#对于linux来说，主要包括三种软件安装方式：" class="headerlink" title="对于linux来说，主要包括三种软件安装方式："></a>对于linux来说，主要包括三种软件安装方式：</h3><blockquote>
-<ol>
-<li>绿色软件，解压可用。</li>
-<li>源代码的文件，需要编译。</li>
-<li>使用系统软件商店或者叫镜像也行。</li>
-</ol>
-<p>当然前两种方式对于大多数人来说，都是比较麻烦的，有没有像第三种方式一样能把大部分软件通过一句命令就能安装呢？答案是有的，那就conda。这个的总结洲更班长总结的已经很完善。</p>
-</blockquote>
-<h3 id="洲更conda笔记三部曲"><a href="#洲更conda笔记三部曲" class="headerlink" title="洲更conda笔记三部曲"></a>洲更conda笔记三部曲</h3><p>1.<a href="https://mp.weixin.qq.com/s?__biz=MzI1MjU5MjMzNA==&amp;mid=2247484454&amp;idx=1&amp;sn=65484a705da7ab4aa0caa55ab4513e64&amp;chksm=e9e02d87de97a491323d0c7f445f189545254dee2bacf1ff1324b7d5f07718de7fed3e900fa8&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">世上没有白走的路，每一步都算数</a><br>2.<a href="https://mp.weixin.qq.com/s?__biz=MzI1MjU5MjMzNA==&amp;mid=2247483873&amp;idx=1&amp;sn=daa6dca017d2128ee53e6d49fbc4ee6c&amp;chksm=e9e02840de97a156754d7774d559c2a6ac3a2dcabd5aaee777dc8b0ac81b178c98f36dd0faa2&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">生信软件的好帮手-bioconda</a><br>3.<a href="https://mp.weixin.qq.com/s?__biz=MzI1MjU5MjMzNA==&amp;mid=2247484555&amp;idx=1&amp;sn=acf5b981570298724fb57d95d8c1a266&amp;chksm=e9e02d2ade97a43c5566921bb53d5261be531b578eb65f895a900eb403e94ad579df3de50111&amp;mpshare=1&amp;scene=23&amp;srcid=1022E0lyCCdzHG2saN6opHCd#rd" target="_blank" rel="noopener">什么，你嫌bioconda下载速度太慢？</a></p>
-<h3 id="配置可重复性。"><a href="#配置可重复性。" class="headerlink" title="配置可重复性。"></a>配置可重复性。</h3><blockquote>
-<p>这个是最近才有的体会，比如说你有好几个电脑都想有相同分析环境，这个不免会把有的软件可能会重新装一遍.</p>
-<ol>
-<li>那么这个时候，最好是不要去乱去重新一个新的文件夹。比如说在电脑1上使用biosoft文件夹来装软件，那么在电脑2上也请用biosoft文件夹，因为的记录一次的安装代码可以随意的重复使用。</li>
-<li>请善待路径中的~，你会喜欢上它的。</li>
-<li>如果是联网的电脑，一个软件安装脚本就可以帮你搞定一台新的电脑的配置。</li>
-<li>当然环境的移植，conda也可以，或者还有其他的方式，有待发掘。</li>
-</ol>
-</blockquote>
-<h3 id="数据的重复性"><a href="#数据的重复性" class="headerlink" title="数据的重复性"></a>数据的重复性</h3><blockquote>
-<p>我的理解有以下几点：</p>
-<ol>
-<li>生信的学习必经之路，这个就跟我们做完题，会去对一对标准答案一样的。</li>
-<li>数据的重复，必须基于的是软件及其版本一致，基因版本，注释文件版本和数据库版本一致。</li>
-<li>测序的数据不应该一次用完就抛在一边，那样太可惜了，因为数据库在更新，以及联合分析多篇文章的数据都可能有新的科学发现。</li>
-</ol>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">环境配置</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">数据重复性</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/biostar/" class="article-tag-list-link color3">biostar</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/23/biotar 学习笔记（2-2）--- 环境配置、数据的重复性/">展开全文 >></a>
         </p>
       
 
@@ -675,97 +675,6 @@
 
 
   
-    <article id="post-bar_sd_plot" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/07/bar_sd_plot/">bar_sd_plot</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/07/bar_sd_plot/" class="archive-article-date">
-  	<time datetime="2017-07-06T18:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="建立数据框"><a href="#建立数据框" class="headerlink" title="建立数据框"></a>建立数据框</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Normal &lt;- c(<span class="number">0.83</span>, <span class="number">0.79</span>, <span class="number">0.99</span>, <span class="number">0.69</span>)</span><br><span class="line">Cancer &lt;- c(<span class="number">0.56</span>, <span class="number">0.56</span>, <span class="number">0.64</span>, <span class="number">0.52</span>)</span><br><span class="line">m &lt;- c(mean(Normal), mean(Cancer))</span><br><span class="line">s &lt;- c(sd(Normal), sd(Cancer))</span><br><span class="line">d &lt;- data.frame(V=c(<span class="string">"Normal"</span>, <span class="string">"Cancer"</span>), mean=m, sd=s)</span><br></pre></td></tr></table></figure>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">d</span><br><span class="line"><span class="comment">##        V  mean         sd</span></span><br><span class="line"><span class="comment">## 1 Normal 0.825 0.12476645</span></span><br><span class="line"><span class="comment">## 2 Cancer 0.570 0.05033223</span></span><br></pre></td></tr></table></figure>
-<h2 id="条形图"><a href="#条形图" class="headerlink" title="条形图"></a>条形图</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">d$V &lt;- factor(d$V, levels=c(<span class="string">"Normal"</span>, <span class="string">"Cancer"</span>))</span><br><span class="line">p &lt;- ggplot(d, aes(V, mean, fill=V, width=<span class="number">.5</span>))</span><br><span class="line">p &lt;- p + geom_bar(stat=<span class="string">"identity"</span>, position=position_dodge(width=<span class="number">.8</span>), colour=<span class="string">"black"</span>)</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
-<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/6ImD82PqOxXLCrRar5rQTUbmUKHcHS8DXwkITBiSPUE!/r/dHMAAAAAAAAA" alt="image"></p>
-<h2 id="误差线"><a href="#误差线" class="headerlink" title="误差线"></a>误差线</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p+geom_errorbar(aes(ymin=mean, ymax=mean+sd, width=<span class="number">.2</span>), position=position_dodge(width=<span class="number">.8</span>))</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
-<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/ePI2**.pyv4mesoglEMXDxG06EwJHRfyQqmlw1p8M58!/r/dGoBAAAAAAAA" alt="image"></p>
-<h2 id="填充颜色设置"><a href="#填充颜色设置" class="headerlink" title="填充颜色设置"></a>填充颜色设置</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p + scale_fill_manual(values=c(<span class="string">"grey80"</span>, <span class="string">"white"</span>))</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
-<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/0QTtmNwNAj8Vi*eDlkI4EutlRW4gNPizrfxJLiAIa4s!/r/dGoBAAAAAAAA" alt="image"></p>
-<h2 id="主题，图例，轴名"><a href="#主题，图例，轴名" class="headerlink" title="主题，图例，轴名"></a>主题，图例，轴名</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p + theme_bw() +theme(legend.position=<span class="string">"none"</span>) + xlab(<span class="string">""</span>) + ylab(<span class="string">""</span>)</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
-<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/u2hV00GSTfzzMU9fGmosbVQxbDAhjhzm*FAb2G.aH*o!/r/dGsBAAAAAAAA" alt="image"></p>
-<h2 id="y轴刻度"><a href="#y轴刻度" class="headerlink" title="y轴刻度"></a>y轴刻度</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p+scale_y_continuous(expand=c(<span class="number">0</span>,<span class="number">0</span>), limits=c(<span class="number">0</span>, <span class="number">1.2</span>), breaks=seq(<span class="number">0</span>, <span class="number">1.2</span>, by=<span class="number">.2</span>))</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
-<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/T5.q65j2mnc1c6Rkv61V4Yl*imVAXamt.eUPw6Abpqc!/r/dHIAAAAAAAAA" alt="image"></p>
-<h2 id="加线，星号"><a href="#加线，星号" class="headerlink" title="加线，星号"></a>加线，星号</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p+geom_segment(aes(x=<span class="number">1</span>, y=<span class="number">.98</span>, xend=<span class="number">1</span>, yend=<span class="number">1.1</span>))</span><br><span class="line">p &lt;- p+geom_segment(aes(x=<span class="number">2</span>, y=<span class="number">.65</span>, xend=<span class="number">2</span>, yend=<span class="number">1.1</span>))</span><br><span class="line">p &lt;- p+geom_segment(aes(x=<span class="number">1</span>, y=<span class="number">1.1</span>, xend=<span class="number">2</span>, yend=<span class="number">1.1</span>))</span><br><span class="line">p &lt;- p + annotate(<span class="string">"text"</span>, x=<span class="number">1.5</span>, y=<span class="number">1.08</span>, label=<span class="string">"*"</span>)</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
-<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/TVNIEn9fR5EHldbFDGewOe*5YG4D3kKC5btejCT2ACk!/r/dGsBAAAAAAAA" alt="image"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ggplot2</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">r</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">bar</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/r/" class="article-tag-list-link color2">r</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/07/bar_sd_plot/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
     <article id="post-markdown test2 picture test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -854,6 +763,97 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/07/07/markdown test2 picture test/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-bar_sd_plot" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/07/bar_sd_plot/">bar_sd_plot</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/07/bar_sd_plot/" class="archive-article-date">
+  	<time datetime="2017-07-06T18:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="建立数据框"><a href="#建立数据框" class="headerlink" title="建立数据框"></a>建立数据框</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Normal &lt;- c(<span class="number">0.83</span>, <span class="number">0.79</span>, <span class="number">0.99</span>, <span class="number">0.69</span>)</span><br><span class="line">Cancer &lt;- c(<span class="number">0.56</span>, <span class="number">0.56</span>, <span class="number">0.64</span>, <span class="number">0.52</span>)</span><br><span class="line">m &lt;- c(mean(Normal), mean(Cancer))</span><br><span class="line">s &lt;- c(sd(Normal), sd(Cancer))</span><br><span class="line">d &lt;- data.frame(V=c(<span class="string">"Normal"</span>, <span class="string">"Cancer"</span>), mean=m, sd=s)</span><br></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">d</span><br><span class="line"><span class="comment">##        V  mean         sd</span></span><br><span class="line"><span class="comment">## 1 Normal 0.825 0.12476645</span></span><br><span class="line"><span class="comment">## 2 Cancer 0.570 0.05033223</span></span><br></pre></td></tr></table></figure>
+<h2 id="条形图"><a href="#条形图" class="headerlink" title="条形图"></a>条形图</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">d$V &lt;- factor(d$V, levels=c(<span class="string">"Normal"</span>, <span class="string">"Cancer"</span>))</span><br><span class="line">p &lt;- ggplot(d, aes(V, mean, fill=V, width=<span class="number">.5</span>))</span><br><span class="line">p &lt;- p + geom_bar(stat=<span class="string">"identity"</span>, position=position_dodge(width=<span class="number">.8</span>), colour=<span class="string">"black"</span>)</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
+<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/6ImD82PqOxXLCrRar5rQTUbmUKHcHS8DXwkITBiSPUE!/r/dHMAAAAAAAAA" alt="image"></p>
+<h2 id="误差线"><a href="#误差线" class="headerlink" title="误差线"></a>误差线</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p+geom_errorbar(aes(ymin=mean, ymax=mean+sd, width=<span class="number">.2</span>), position=position_dodge(width=<span class="number">.8</span>))</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
+<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/ePI2**.pyv4mesoglEMXDxG06EwJHRfyQqmlw1p8M58!/r/dGoBAAAAAAAA" alt="image"></p>
+<h2 id="填充颜色设置"><a href="#填充颜色设置" class="headerlink" title="填充颜色设置"></a>填充颜色设置</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p + scale_fill_manual(values=c(<span class="string">"grey80"</span>, <span class="string">"white"</span>))</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
+<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/0QTtmNwNAj8Vi*eDlkI4EutlRW4gNPizrfxJLiAIa4s!/r/dGoBAAAAAAAA" alt="image"></p>
+<h2 id="主题，图例，轴名"><a href="#主题，图例，轴名" class="headerlink" title="主题，图例，轴名"></a>主题，图例，轴名</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p + theme_bw() +theme(legend.position=<span class="string">"none"</span>) + xlab(<span class="string">""</span>) + ylab(<span class="string">""</span>)</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
+<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/u2hV00GSTfzzMU9fGmosbVQxbDAhjhzm*FAb2G.aH*o!/r/dGsBAAAAAAAA" alt="image"></p>
+<h2 id="y轴刻度"><a href="#y轴刻度" class="headerlink" title="y轴刻度"></a>y轴刻度</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p+scale_y_continuous(expand=c(<span class="number">0</span>,<span class="number">0</span>), limits=c(<span class="number">0</span>, <span class="number">1.2</span>), breaks=seq(<span class="number">0</span>, <span class="number">1.2</span>, by=<span class="number">.2</span>))</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
+<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/T5.q65j2mnc1c6Rkv61V4Yl*imVAXamt.eUPw6Abpqc!/r/dHIAAAAAAAAA" alt="image"></p>
+<h2 id="加线，星号"><a href="#加线，星号" class="headerlink" title="加线，星号"></a>加线，星号</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- p+geom_segment(aes(x=<span class="number">1</span>, y=<span class="number">.98</span>, xend=<span class="number">1</span>, yend=<span class="number">1.1</span>))</span><br><span class="line">p &lt;- p+geom_segment(aes(x=<span class="number">2</span>, y=<span class="number">.65</span>, xend=<span class="number">2</span>, yend=<span class="number">1.1</span>))</span><br><span class="line">p &lt;- p+geom_segment(aes(x=<span class="number">1</span>, y=<span class="number">1.1</span>, xend=<span class="number">2</span>, yend=<span class="number">1.1</span>))</span><br><span class="line">p &lt;- p + annotate(<span class="string">"text"</span>, x=<span class="number">1.5</span>, y=<span class="number">1.08</span>, label=<span class="string">"*"</span>)</span><br><span class="line">p</span><br></pre></td></tr></table></figure>
+<p><img src="http://r.photo.store.qq.com/psb?/V10xezAz2ChiX0/TVNIEn9fR5EHldbFDGewOe*5YG4D3kKC5btejCT2ACk!/r/dGsBAAAAAAAA" alt="image"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ggplot2</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">r</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">bar</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/r/" class="article-tag-list-link color2">r</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/07/bar_sd_plot/">展开全文 >></a>
         </p>
       
 
@@ -1155,10 +1155,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MarKdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
@@ -1175,6 +1171,30 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">环境配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">数据重复性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MarKdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">test</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ggplot2</a>
               </li>
              
@@ -1184,26 +1204,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">bar</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">虚拟机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">环境配置</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">数据重复性</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">test</a>
               </li>
              
               <li class="article-tag-list-item">
