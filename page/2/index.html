@@ -307,77 +307,6 @@
 
 
   
-    <article id="post-test1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/05/test1/">test1</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/05/test1/" class="archive-article-date">
-  	<time datetime="2017-07-05T02:54:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><figure class="highlight plain"><figcaption><span>setup, include</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::opts_chunk$set(echo = TRUE)</span><br></pre></td></tr></table></figure>
-<h2 id="test-1"><a href="#test-1" class="headerlink" title="test"></a>test</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">Normal &lt;- c(<span class="number">0.83</span>, <span class="number">0.79</span>, <span class="number">0.99</span>, <span class="number">0.69</span>)</span><br><span class="line">Cancer &lt;- c(<span class="number">0.56</span>, <span class="number">0.56</span>, <span class="number">0.64</span>, <span class="number">0.52</span>)</span><br><span class="line">m &lt;- c(mean(Normal), mean(Cancer))</span><br><span class="line">s &lt;- c(sd(Normal), sd(Cancer))</span><br><span class="line">d &lt;- data.frame(V=c(<span class="string">"Normal"</span>, <span class="string">"Cancer"</span>), mean=m, sd=s)</span><br><span class="line">d</span><br><span class="line">d$V &lt;- factor(d$V, levels=c(<span class="string">"Normal"</span>, <span class="string">"Cancer"</span>))</span><br><span class="line"></span><br><span class="line">p &lt;- ggplot(d, aes(V, mean, fill=V, width=<span class="number">.5</span>))</span><br><span class="line">p &lt;- p+geom_errorbar(aes(ymin=mean, ymax=mean+sd, width=<span class="number">.2</span>), position=position_dodge(width=<span class="number">.8</span>))</span><br><span class="line">p &lt;- p + geom_bar(stat=<span class="string">"identity"</span>, position=position_dodge(width=<span class="number">.8</span>), colour=<span class="string">"black"</span>)</span><br><span class="line">p &lt;- p + scale_fill_manual(values=c(<span class="string">"grey80"</span>, <span class="string">"white"</span>))</span><br><span class="line">p &lt;- p + theme_bw() +theme(legend.position=<span class="string">"none"</span>) + xlab(<span class="string">""</span>) + ylab(<span class="string">""</span>)</span><br><span class="line">p &lt;- p + theme(axis.text.x = element_text(face=<span class="string">"bold"</span>, size=<span class="number">12</span>), </span><br><span class="line">               axis.text.y = element_text(face=<span class="string">"bold"</span>, size=<span class="number">12</span>))</span><br><span class="line">p &lt;- p+scale_y_continuous(expand=c(<span class="number">0</span>,<span class="number">0</span>), limits=c(<span class="number">0</span>, <span class="number">1.2</span>), breaks=seq(<span class="number">0</span>, <span class="number">1.2</span>, by=<span class="number">.2</span>))</span><br><span class="line">p &lt;- p+geom_segment(aes(x=<span class="number">1</span>, y=<span class="number">.98</span>, xend=<span class="number">1</span>, yend=<span class="number">1.1</span>))</span><br><span class="line">p &lt;- p+geom_segment(aes(x=<span class="number">2</span>, y=<span class="number">.65</span>, xend=<span class="number">2</span>, yend=<span class="number">1.1</span>))</span><br><span class="line">p &lt;- p+geom_segment(aes(x=<span class="number">1</span>, y=<span class="number">1.1</span>, xend=<span class="number">2</span>, yend=<span class="number">1.1</span>))</span><br><span class="line">p &lt;- p + annotate(<span class="string">"text"</span>, x=<span class="number">1.5</span>, y=<span class="number">1.08</span>, label=<span class="string">"*"</span>)</span><br><span class="line">print(p)</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">test</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/test/" class="article-tag-list-link color5">test</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/05/test1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -769,6 +698,77 @@ $(document).ready(function () {
 
 
   
+    <article id="post-test1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/05/test1/">test1</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/05/test1/" class="archive-article-date">
+  	<time datetime="2017-07-05T02:54:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><figure class="highlight plain"><figcaption><span>setup, include</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">knitr::opts_chunk$set(echo = TRUE)</span><br></pre></td></tr></table></figure>
+<h2 id="test-1"><a href="#test-1" class="headerlink" title="test"></a>test</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line">Normal &lt;- c(<span class="number">0.83</span>, <span class="number">0.79</span>, <span class="number">0.99</span>, <span class="number">0.69</span>)</span><br><span class="line">Cancer &lt;- c(<span class="number">0.56</span>, <span class="number">0.56</span>, <span class="number">0.64</span>, <span class="number">0.52</span>)</span><br><span class="line">m &lt;- c(mean(Normal), mean(Cancer))</span><br><span class="line">s &lt;- c(sd(Normal), sd(Cancer))</span><br><span class="line">d &lt;- data.frame(V=c(<span class="string">"Normal"</span>, <span class="string">"Cancer"</span>), mean=m, sd=s)</span><br><span class="line">d</span><br><span class="line">d$V &lt;- factor(d$V, levels=c(<span class="string">"Normal"</span>, <span class="string">"Cancer"</span>))</span><br><span class="line"></span><br><span class="line">p &lt;- ggplot(d, aes(V, mean, fill=V, width=<span class="number">.5</span>))</span><br><span class="line">p &lt;- p+geom_errorbar(aes(ymin=mean, ymax=mean+sd, width=<span class="number">.2</span>), position=position_dodge(width=<span class="number">.8</span>))</span><br><span class="line">p &lt;- p + geom_bar(stat=<span class="string">"identity"</span>, position=position_dodge(width=<span class="number">.8</span>), colour=<span class="string">"black"</span>)</span><br><span class="line">p &lt;- p + scale_fill_manual(values=c(<span class="string">"grey80"</span>, <span class="string">"white"</span>))</span><br><span class="line">p &lt;- p + theme_bw() +theme(legend.position=<span class="string">"none"</span>) + xlab(<span class="string">""</span>) + ylab(<span class="string">""</span>)</span><br><span class="line">p &lt;- p + theme(axis.text.x = element_text(face=<span class="string">"bold"</span>, size=<span class="number">12</span>), </span><br><span class="line">               axis.text.y = element_text(face=<span class="string">"bold"</span>, size=<span class="number">12</span>))</span><br><span class="line">p &lt;- p+scale_y_continuous(expand=c(<span class="number">0</span>,<span class="number">0</span>), limits=c(<span class="number">0</span>, <span class="number">1.2</span>), breaks=seq(<span class="number">0</span>, <span class="number">1.2</span>, by=<span class="number">.2</span>))</span><br><span class="line">p &lt;- p+geom_segment(aes(x=<span class="number">1</span>, y=<span class="number">.98</span>, xend=<span class="number">1</span>, yend=<span class="number">1.1</span>))</span><br><span class="line">p &lt;- p+geom_segment(aes(x=<span class="number">2</span>, y=<span class="number">.65</span>, xend=<span class="number">2</span>, yend=<span class="number">1.1</span>))</span><br><span class="line">p &lt;- p+geom_segment(aes(x=<span class="number">1</span>, y=<span class="number">1.1</span>, xend=<span class="number">2</span>, yend=<span class="number">1.1</span>))</span><br><span class="line">p &lt;- p + annotate(<span class="string">"text"</span>, x=<span class="number">1.5</span>, y=<span class="number">1.08</span>, label=<span class="string">"*"</span>)</span><br><span class="line">print(p)</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">test</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/test/" class="article-tag-list-link color5">test</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/05/test1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
@@ -865,11 +865,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">MarKdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MarKdown</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -905,14 +905,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">picture</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">环境配置</a>
               </li>
              
@@ -922,6 +914,14 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">test</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">picture</a>
               </li>
              
               <li class="article-tag-list-item">
