@@ -719,8 +719,8 @@ $(document).ready(function () {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/05/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/05/test1/" rel="prev" title="test1">
+                test1 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -752,7 +752,7 @@ $(document).ready(function () {
 
   
     <div class="comments" id="comments">
-      <div id="uyan_frame"></div>
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjI5Ny84ODU4"></div>
     </div>
 
   
@@ -1066,19 +1066,22 @@ $(document).ready(function () {
 
 
   
-    
 
-    
-      <!-- UY BEGIN -->
-      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2151528"></script>
-      <!-- UY END -->
-    
+
+
+
+
   
-
-
-
-
-
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
